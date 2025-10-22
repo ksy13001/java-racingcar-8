@@ -7,7 +7,7 @@ public class Input {
     }
 
     public static String readLine(String prompt) {
-        System.out.print(prompt);
+        System.out.println(prompt);
         return Console.readLine();
     }
 }
