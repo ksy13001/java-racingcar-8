@@ -15,4 +15,14 @@ public class InputParser {
                 .map(String::trim)
                 .toList();
     }
+
+    public static Integer parseRaceRounds(String input){
+        Integer result = null;
+        try {
+            result = Integer.parseInt(input);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("시도횟수는 숫자만 가능합니다.");
+        }
+        return result;
+    }
 }
