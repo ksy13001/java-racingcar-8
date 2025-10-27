@@ -8,11 +8,11 @@ public class Game {
     private static final int FORWARD_REQUIRED_VALUE = 4;
 
     private final List<Car> cars;
-    private final RandomGenerator randomGenerator;
+    private final NumberGenerator numberGenerator;
     private final int raceRounds;
 
-    public Game(List<String> carNames, RandomGenerator randomGenerator, int raceRounds) {
-        this.randomGenerator = randomGenerator;
+    public Game(List<String> carNames, NumberGenerator numberGenerator, int raceRounds) {
+        this.numberGenerator = numberGenerator;
         this.raceRounds = raceRounds;
         this.cars = carNames.stream().map(Car::of).toList();
     }
@@ -20,7 +20,7 @@ public class Game {
     public void play() {
         for (int i = 0; i < raceRounds; i++) {
             for (Car car : cars) {
-                race(car, randomGenerator.generateRandomNumber());
+                race(car, numberGenerator.generateNumber());
             }
             System.out.println();
         }
