@@ -13,6 +13,7 @@ public class Prompt {
     private static final String CAR_NAME_SEPARATOR = ":";
     private static final String MOVE_SYMBOL = "-";
     private static final String WINNER_SEPARATOR = ", ";
+    private static final String SPACE = " ";
 
 
     public static String buildCarNamesPrompt(){
@@ -24,7 +25,7 @@ public class Prompt {
     }
 
     public static String buildRacingStatusPrompt(String carName, int moveCount) {
-        return carName + CAR_NAME_SEPARATOR + MOVE_SYMBOL.repeat(moveCount);
+        return carName + SPACE + CAR_NAME_SEPARATOR + SPACE + MOVE_SYMBOL.repeat(moveCount);
     }
 
     public static String buildWinnerPrompt(List<String> winners) {
