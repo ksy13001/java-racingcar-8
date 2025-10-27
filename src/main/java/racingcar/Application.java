@@ -1,8 +1,5 @@
 package racingcar;
 
-import camp.nextstep.edu.missionutils.Randoms;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class Application {
@@ -16,11 +13,9 @@ public class Application {
         int raceRounds = InputParser.parseRaceRounds(input2);
         InputValidator.validateRaceRounds(raceRounds);
 
-        Game game = new Game(carNames, new RandomGenerator(), raceRounds);
-        game.play();
-        List<String> winners = game.selectWinners();
+        Game game = new Game(carNames, new RandomNumberGenerator(), raceRounds);
+        List<String> winners = game.play();
 
-        String result = String.join(",", winners);
-        System.out.print("최종 우승자 : "+result);
+        Output.printWinners(winners);
     }
 }
